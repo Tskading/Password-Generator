@@ -11,21 +11,51 @@
     <script>
 
             var alphaElements = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
-            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
+            "!", "@", "$", "&", "*","?"];
             
 
             var randomPassword = "";
             
             
-                alert("check console log");
+                alert("Please open your console log. (Fn+F12)");
 
-                var numberOfCharachters = prompt("How many charachters would you like your password to be? Pick a value between 8 and 128.")
+                var numberOfCharachters = parseInt(prompt("How many charachters would you like your password to be? Pick a value between 8 and 128."))
+
+                    if ((numberOfCharachters > 8) && (numberOfCharachters < 128)) {
+                        alert("Thank you.  Your new password will be " + (numberOfCharachters) + " charachters long.")
+                    }
+                    else {
+                        prompt("How many charachters would you like your password to be? Pick a value between 8 and 128.");
+                           
+                    }
 
                 var lowerCase = confirm("Do you want to include lower case letters?")
 
+                    if (lowerCase) {
+                        alert("We will include lowercase letters in your new password.");
+                    }
+                    else {
+                        alert("We will not inculde lower case letters in your new password.")
+                    }
+
                 var upperCase = confirm("Do you want to include upper case letters?")
 
+                    if (upperCase) {
+                        alert("We will include uppercase letters in your new password.");
+                    }
+                    else {
+                        alert("We will not inculde uppercase letters in your new password.")
+                    }
+
                 var numbers = confirm("Do you want to include numbers?")
+
+                    if (numbers) {
+                        alert("We will include numbers in your new password.")
+                    }
+                    else {
+                        alert("We will not include numbers in your new password.")
+                    }
 
                 var specialCharachters = confirm("Do you want to inculde special charachters?")
 
@@ -38,9 +68,14 @@
                     var num = Math.floor(Math.random() * alphaElements.length)
                     console.log(alphaElements[num]) 
 
+              
+            
+
                 }
 
                
+
+
                             
            
 
