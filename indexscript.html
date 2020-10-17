@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+            var alphaElements = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            
+
+            var randomPassword = "";
+            
+            
+                alert("check console log");
+
+                var numberOfCharachters = prompt("How many charachters would you like your password to be? Pick a value between 8 and 128.")
+
+                
+
+                // generates random number based on the number of charachters requested in the prompt and prints it to the console log
+                for (i = 0; i < numberOfCharachters; i++) {
+
+
+                    var num = Math.floor(Math.random() * alphaElements.length)
+                    console.log(alphaElements[num]) 
+
+                }
+
+               
+                            
+           
+
+
+
+
+    </script>
+    
+</body>
+</html>
