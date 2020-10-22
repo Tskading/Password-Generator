@@ -19,6 +19,17 @@
             var incorrectPrompt = true;
             var numberOfCharachters;
 
+            // var lowerAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            // var upperAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            // var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+            // var specialChar = ["!", "@", "$", "&", "*","?"]
+            var customPassArray = []
+            console.log(customPassArray)
+
+
+
+
+
                 alert("Please open your console log. (Fn+F12)");
 
                 
@@ -39,18 +50,24 @@
 
                     if (lowerCase) {
                         alert("We will include lowercase letters in your new password.");
+                        lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+                        console.log(lowerCase);
+
+                        customPassArray.push(...lowerCase)
                     }
                     else {
                         alert("We will not inculde lower case letters in your new password.");
-                        // remove all lowercase from the array //
-                        //             alphaElements = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
-                        //                  "!", "@", "$", "&", "*","?"];
+                      
                     }
 
                 var upperCase = confirm("Do you want to include upper case letters?");
 
                     if (upperCase) {
                         alert("We will include uppercase letters in your new password.");
+                        upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                        console.log(upperCase);
+
+                        customPassArray.push(...upperCase);
                     }
                     else {
                         alert("We will not inculde uppercase letters in your new password.");
@@ -62,6 +79,10 @@
 
                     if (numbers) {
                         alert("We will include numbers in your new password.");
+                        numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+                        console.log(numbers);
+
+                        customPassArray.push(...numbers);
                     }
                     else {
                         alert("We will not include numbers in your new password.");
@@ -73,6 +94,10 @@
 
                     if (specialCharachters) {
                         alert("We will include special charachters in your new password.");
+                        specialCharachters = ["!", "@", "$", "&", "*","?"];
+                        console.log(specialCharachters);
+
+                        customPassArray.push(...specialCharachters);
                     }
                     else {
                         alert("We will not include special charachters in your new password.");
@@ -86,8 +111,10 @@
                 for (i = 0; i < numberOfCharachters; i++) {
 
 
-                    var num = Math.floor(Math.random() * alphaElements.length)
-                    console.log(alphaElements[num]) 
+                    var num = Math.floor(Math.random() * customPassArray.length);
+
+
+                    console.log(customPassArray[num]) 
 
 
 
