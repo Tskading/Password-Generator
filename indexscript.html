@@ -10,19 +10,16 @@
 
     <script>
 
-            var alphaElements = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
-            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
-            "!", "@", "$", "&", "*","?"];
+            // var alphaElements = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
+            // "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
+            // "!", "@", "$", "&", "*","?"];
             
 
             var randomPassword = "";
-            var incorrectPrompt = true;
+            
+            var incorrectPrompt = true; // this says that it's currently incorrect
             var numberOfCharachters;
 
-            // var lowerAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            // var upperAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            // var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-            // var specialChar = ["!", "@", "$", "&", "*","?"]
             var customPassArray = []
             console.log(customPassArray)
 
@@ -33,13 +30,14 @@
                 alert("Please open your console log. (Fn+F12)");
 
                 
-
+                    //while the parameters haven't been met yet, it's technically incorrect 
                     while (incorrectPrompt) {
 
                         numberOfCharachters = parseInt(prompt("How many charachters would you like your password to be? Pick a value between 8 and 128."));
-
+                        //user has to meet criteria
                         if ((numberOfCharachters >= 8) && (numberOfCharachters <= 128)) {
                         alert("Thank you.  Your new password will be " + (numberOfCharachters) + " charachters long.");
+                        //below actually means that they got it right bc the above happened
                         incorrectPrompt = false;
                         }
                         
