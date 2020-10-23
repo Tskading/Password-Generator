@@ -2,7 +2,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Write password to the #newArr input - see end of js to view how attained.
 function writePassword() {
   var newArr = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -14,37 +14,37 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 /////////////////////////////////////////////////////////////////////////////////////////
 
-var randomPassword = "";
+var incorrectPrompt = true; 
 
-var incorrectPrompt = true; // this says that it's currently incorrect
-var numberOfCharachters;
+var numberOfCharacters;
 
 var customPassArray = [];
-console.log(customPassArray);
+console.log("customPassArray:", customPassArray);
 
-alert("Please open your console log. (Fn+F12)");
 
+// Start of password generation function.
 function generatePassword(){
 
-//while the parameters haven't been met yet, it's technically incorrect
+//Set up as incorrect until correct prompt is receivied.
 while (incorrectPrompt) {
-  numberOfCharachters = parseInt(
+  numberOfCharacters = parseInt(
     prompt(
-      "How many charachters would you like your password to be? Pick a value between 8 and 128."
+      "How many characters would you like your password to be? Pick a value between 8 and 128."
     )
   );
-  //user has to meet criteria
-  if (numberOfCharachters >= 8 && numberOfCharachters <= 128) {
+  //Acceptance criteria for password length - numberOfCharcters
+  if (numberOfCharacters >= 8 && numberOfCharacters <= 128) {
     alert(
       "Thank you.  Your new password will be " +
-        numberOfCharachters +
-        " charachters long."
+        numberOfCharacters +
+        " characters long."
     );
-    //below actually means that they got it right bc the above happened
+    
     incorrectPrompt = false;
   }
 }
 
+// Start of prompt to confirm and, if accepted, add these characters to the customPassArray.
 var lowerCase = confirm("Do you want to include lower case letters?");
 
 if (lowerCase) {
@@ -77,13 +77,14 @@ if (lowerCase) {
     "y",
     "z",
   ];
-  console.log(lowerCase);
+  console.log("lowerCase:", lowerCase);
 
   customPassArray.push(...lowerCase);
 } else {
   alert("We will not inculde lower case letters in your new password.");
 }
 
+// Start of prompt to confirm and, if accepted, add these characters to the customPassArray.
 var upperCase = confirm("Do you want to include upper case letters?");
 
 if (upperCase) {
@@ -116,51 +117,56 @@ if (upperCase) {
     "Y",
     "Z",
   ];
-  console.log(upperCase);
+  console.log("upperCase:", upperCase);
 
   customPassArray.push(...upperCase);
 } else {
   alert("We will not inculde uppercase letters in your new password.");
 }
 
+// Start of prompt to confirm and, if accepted, add these characters to the customPassArray.
 var numbers = confirm("Do you want to include numbers?");
 
 if (numbers) {
   alert("We will include numbers in your new password.");
   numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-  console.log(numbers);
+  console.log("numbers:", numbers);
 
   customPassArray.push(...numbers);
 } else {
   alert("We will not include numbers in your new password.");
 }
 
-var specialCharachters = confirm("Do you want to inculde special charachters?");
+// Start of prompt to confirm and, if accepted, add these characters to the customPassArray.
+var specialCharacters = confirm("Do you want to inculde special characters?");
 
-if (specialCharachters) {
-  alert("We will include special charachters in your new password.");
-  specialCharachters = ["!", "@", "$", "&", "*", "?"];
-  console.log(specialCharachters);
+if (specialCharacters) {
+  alert("We will include special characters in your new password.");
+  specialCharacters = ["!", "@", "$", "&", "*", "?"];
+  console.log("specialCharcters:", specialCharacters);
 
-  customPassArray.push(...specialCharachters);
+  customPassArray.push(...specialCharacters);
 } else {
-  alert("We will not include special charachters in your new password.");
+  alert("We will not include special characters in your new password.");
 }
+
 
 var num;
 var indivChar;
 var newArr =[] // global arr that we push the new randomized indexes in to 
-// generates random number based on the number of charachters requested in the prompt and prints it to the console log
-for (i = 0; i < numberOfCharachters; i++) {
+// Generates random number based on the number of characters requested in the prompt and prints it to newArr.
+console.log("newArr:", newArr);
+
+for (i = 0; i < numberOfCharacters; i++) {
   num = Math.floor(Math.random() * customPassArray.length);
 
   indivChar = customPassArray[num];
   newArr.push(indivChar);
   
-  //console.log('newArr:', newArr);
-
+  
 }
 return newArr.join("");
+
 
 
 }
