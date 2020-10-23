@@ -2,7 +2,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #newArr input - see end of js to view how attained.
+// Write password to the #newArr input - value attained on lines 163-167.
 function writePassword() {
   var newArr = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -32,7 +32,7 @@ while (incorrectPrompt) {
       "How many characters would you like your password to be? Pick a value between 8 and 128."
     )
   );
-  //Acceptance criteria for password length - numberOfCharcters
+  //Acceptance criteria for password length - numberOfCharcters.
   if (numberOfCharacters >= 8 && numberOfCharacters <= 128) {
     alert(
       "Thank you.  Your new password will be " +
@@ -142,7 +142,7 @@ var specialCharacters = confirm("Do you want to inculde special characters?");
 
 if (specialCharacters) {
   alert("We will include special characters in your new password.");
-  specialCharacters = ["!", "@", "$", "&", "*", "?"];
+  specialCharacters = ["!", "#", "%", "&", "@","(", ")", "<", ">", "^", "~", "`", "$", "&", "*", "?"];
   console.log("specialCharcters:", specialCharacters);
 
   customPassArray.push(...specialCharacters);
