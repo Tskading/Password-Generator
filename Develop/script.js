@@ -153,10 +153,13 @@ if (specialCharacters) {
 
 var num;
 var indivChar;
-var newArr =[] // global arr that we push the new randomized indexes in to 
-// Generates random number based on the number of characters requested in the prompt and prints it to newArr.
+var newArr =[] 
+
+
 console.log("newArr:", newArr);
 
+// Generates random number based on the number of characters requested in the prompt.  
+// Then uses 'num' value to get a random index value for 'indivChar' and pushes those values into 'newArr'.
 for (i = 0; i < numberOfCharacters; i++) {
   num = Math.floor(Math.random() * customPassArray.length);
 
