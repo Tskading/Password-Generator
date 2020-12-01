@@ -1,11 +1,18 @@
 # Password-Generator
-Utilize user preferences to generate a pseudo password.
+Utilize user preferences to generate a pseudo password via prompts and JavaScript.
 
 # Goals
 The goal of this project was to create the javascript logic to utilize a provided html/css password generator template.  The ability of the user to dictate possible variables provided the challenge of the project.  
 
 # Process
 I started by creating one array with all possible variables and wrote a 'for' loop to generate a random number - that was in turn, used to call upon random indexs of all of the possible outcomes.  Incoroparating the first prompt of charachter length was the next step.  With this in place, I was able to create all prompts for the remaining variables: lower case letters, upper case letters, numbers, and special characters.  From this point I could get a random password of the users length of choice (between 8 and 128).  But, I wasn't yet able to only select certain variables.  To accomplish this, I broke apart the all encompassing array into seperate varaiables.  From here I added them to a new custom array if the prompt to include was true/accepted.  This provided a custom array to create a random password from.  Final steps incuded creating a new array for the outputs of the 'for' loop, and making sure the result printed within the page.
+
+# Screenshots and Live Link
+
+[Clicking here will take you to my live Password Generator website.](https://tskading.github.io/Password-Generator/)
+
+![Main Password Generator Page](images/mainPage.png)
+![Main Password with Text](images/mainPageWithPassword.png)
 
 ## Known Bugs
 - There is no way to cancel out of initial prompt without providing a correct response.

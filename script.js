@@ -18,6 +18,8 @@ var incorrectPrompt = true;
 
 var numberOfCharacters;
 
+
+
 var customPassArray = [];
 console.log("customPassArray:", customPassArray);
 
